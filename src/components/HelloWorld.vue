@@ -111,16 +111,24 @@
 </template>
 
 <script lang="ts">
-import { Options, Vue } from 'vue-class-component';
+import { defineComponent } from 'vue';
 
-@Options({
+const mock = defineComponent({
   props: {
-    msg: String,
+    msg: {
+      type: String,
+      required: true,
+    },
   },
-})
-export default class HelloWorld extends Vue {
-  msg!: string;
-}
+  setup(props) {
+    return {
+      // eslint-disable-next-line vue/no-dupe-keys
+      msg: props.msg,
+    };
+  },
+});
+
+export default mock;
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
