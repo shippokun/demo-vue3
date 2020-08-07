@@ -7,7 +7,8 @@
     "build": "vue-cli-service build",
     "test": "vue-cli-service test:unit",
     "lint": "vue-cli-service lint",
-    "commit": "npx git-cz"
+    "commit": "npx git-cz",
+    "mock": "node mocks/server.ts"
   },
   "dependencies": {
     "@vue/apollo-composable": "^4.0.0-alpha.10",
