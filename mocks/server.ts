@@ -1,6 +1,8 @@
 const { ApolloServer, gql } = require('apollo-server');
 
 const typeDefs = gql`
+  scalar Date
+
   type Query {
     person: Person
   }
@@ -8,6 +10,7 @@ const typeDefs = gql`
   type Person {
     name: String
     age: Int
+    updateTime: Date
   }
 `;
 
@@ -15,6 +18,7 @@ const mocks = {
   Person: () => ({
     name: 'Jack',
     age: 10,
+    updateTime: () => new Date(),
   }),
 };
 
